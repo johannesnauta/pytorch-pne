@@ -75,7 +75,7 @@ if __name__ == "__main__":
     
     # Save or show
     if "save" in sys.argv:
-        fig.savefig("figures/"+pjotr.dload.name, bbox_inches='tight')
+        fig.savefig("figures/results", bbox_inches='tight')
     else:
         plt.show()
 

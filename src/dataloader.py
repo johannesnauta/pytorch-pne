@@ -21,9 +21,9 @@ class Sinewave():
         self.y = np.sin(self.x) + noise
 
         # Standardize data
-        self.input_mean = np.mean(self.x)
-        self.input_std = np.std(self.x)
-        self.x = (self.x-self.input_mean)/self.input_std
+        # self.input_mean = np.mean(self.x)
+        # self.input_std = np.std(self.x)
+        # self.x = (self.x-self.input_mean)/self.input_std
 
     def get_samples(self, N):
         """ Get N samples from the generated dataset """
@@ -38,7 +38,7 @@ class Sinewave():
         x = np.linspace(self.xmin-a*delta, self.xmax+a*delta, num=N)
         y = np.sin(x)
         # Standardize data
-        x = (x-self.input_mean)/self.input_std 
+        # x = (x-self.input_mean)/self.input_std 
         return x, y
 
 class Simplecurve():
@@ -59,9 +59,9 @@ class Simplecurve():
         noise = np.random.normal(0, 0.25*self.xmax**2, size=len(self.x))
         self.y = self.x**3 + noise 
         # Standardize data
-        self.input_mean = np.mean(self.x)
-        self.input_std = np.std(self.x)
-        self.x = (self.x-self.input_mean)/self.input_std
+        # self.input_mean = np.mean(self.x)
+        # self.input_std = np.std(self.x)
+        # self.x = (self.x-self.input_mean)/self.input_std
 
     def get_samples(self, N):
         """ Get N samples from the generated dataset """
@@ -75,6 +75,6 @@ class Simplecurve():
         x = np.linspace(self.xmin-a*(self.xmax-self.xmin), self.xmax+a*(self.xmax-self.xmin), num=N)
         y = x**3
         # Standardize data
-        x = (x-self.input_mean)/self.input_std 
+        # x = (x-self.input_mean)/self.input_std 
         return x, y
 

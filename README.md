@@ -7,7 +7,8 @@ Currently implements two data sets:
 * A simple sine wave `y = sin(x)`
 * A simple curve `y = x**3`
 
-(https://github.com/github-jnauta/pytorch-pne/tree/master/figures/results.png)
+![results](figures/results.png)
+Grey and lighter grey areas show 1 and 2 standard deviations respectively.
 
 ## Requirements
 In addition to the standard Python 3 libraries, to run the code you will need:

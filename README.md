@@ -3,9 +3,10 @@ PyTorch implementations that trains an ensemble of probabilistic neural networks
 * [Lakshminarayanan _et al._, Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles (2017)](https://papers.nips.cc/paper/7219-simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles.pdf)
 * [Chua _et al._, Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamic Models](https://arxiv.org/abs/1805.12114)
 
-Currently implements two data sets: 
+Currently implements three data sets: 
 * A simple sine wave `y = sin(x)`
 * A simple curve `y = x**3`
+* Simple two dimensional system `z = sin(x)cos(y)`
 
 ![results](figures/results.png)
 Fig 1: Simple regression. Grey and lighter grey areas show 1 and 2 standard deviations respectively.

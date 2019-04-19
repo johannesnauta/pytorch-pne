@@ -19,14 +19,15 @@ if __name__ == "__main__":
     # Parameters
     ensemble_size = 2       # Ensemble size per core
     batch_size = 10         
-    epochs = 5000
-    data_samples = 1000
-    test_samples = 500      
+    epochs = 2500
+    data_samples = 100
+    test_samples = 250      
     decay_rate = 100        # Learning rate decay
 
     # Initialize objects
     # available data sets: Sinewave(N, seed), Simplecurve(N, seed)
-    datasets = ['sinewave', 'simplecurve']
+    # datasets = ['sinewave', 'simplecurve']
+    datasets = ['simplecurve']
     for curve in datasets:
         if boss:
             print("\nLearning %s..."%(curve))
@@ -49,11 +50,8 @@ if __name__ == "__main__":
                 x, y = dataloader.get_samples(batch_size)
                 # Train model
                 model.step(x,y)
-                if (epoch+1) % decay_rate == 0:
-                    # Adjust learning rate every n steps
-                    model.adjust_learning_rate()
-                    if boss:  
-                        print("Training models %i/%i, epochs %i/%i"%(size*(i+1), size*ensemble_size, epoch+1,epochs), end='\r')
+                if boss and (epoch+1)%100 == 0:  
+                    print("Training models %i/%i, epochs %i/%i"%(size*(i+1), size*ensemble_size, epoch+1, epochs), end='\r')
 
             # Test model
             mean, var = model.forward(xtest)

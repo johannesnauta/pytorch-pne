@@ -16,14 +16,16 @@ class Model():
     def __init__(self, seed):
         torch.manual_seed(seed)
         self.input_dim = 1
-        self.hidden_units = 50
+        self.hidden_units = 16
         self.output_dim = 2
 
         device = torch.device('cpu')
         # Define the model [1 x h x h x 2]
         self.model = torch.nn.Sequential(
             torch.nn.Linear(self.input_dim, self.hidden_units, bias=True),
-            torch.nn.Tanh(),
+            torch.nn.ReLU(),
+            torch.nn.Linear(self.hidden_units, self.hidden_units, bias=True),
+            torch.nn.ReLU(),
             torch.nn.Linear(self.hidden_units, self.hidden_units, bias=True),
             torch.nn.ReLU(),
             torch.nn.Linear(self.hidden_units, self.output_dim, bias=True),
@@ -44,7 +46,7 @@ class Model():
 
     def adjust_learning_rate(self):
         for param_group in self.optimizer.param_groups:
-            param_group['lr'] = param_group['lr']*0.99
+            param_group['lr'] = param_group['lr']*0.999
 
     def NLL(self, means, var, truth):
         """ Compute the Negative Log Likelihood """
@@ -97,8 +99,10 @@ class Model():
         # Do the backward pass through the network
         self.optimizer.zero_grad()
         nll.backward()
-        torch.nn.utils.clip_grad_norm_(self.model.parameters(), 50)
+        torch.nn.utils.clip_grad_norm_(self.model.parameters(), 5)
         self.optimizer.step()
+
+        self.adjust_learning_rate()
 
         
         

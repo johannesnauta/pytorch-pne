@@ -8,7 +8,12 @@ Currently implements two data sets:
 * A simple curve `y = x**3`
 
 ![results](figures/results.png)
-Grey and lighter grey areas show 1 and 2 standard deviations respectively.
+Fig 1: Simple regression. Grey and lighter grey areas show 1 and 2 standard deviations respectively.
+
+![2dresults](figures/2d_std.png)
+Fig 2: Two dimensional regression with clustered training data. _Left_: Contour lines display one standard deviation from the mean, indicating low valued plateau's around the training data. _Right_: Standard deviation in log-scale.
+![2dregression](figures/2d_regression.png)
+Fig 3: Ground truth, ensemble mean and ensemble standard deviation with the same training data. Notice the mean is accurate where there is training data available, but inaccurate outside. However this is reflected by the increase in standard deviation.
 
 ## Requirements
 In addition to the standard Python 3 libraries, to run the code you will need:

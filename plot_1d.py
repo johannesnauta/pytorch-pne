@@ -8,9 +8,9 @@ class Plotter():
     def __init__(self, dataset):
         # available data sets: Sinewave(N, seed), Simplecurve(N, seed)
         if dataset == 'sinewave':
-            self.dload = src.dataloader.Sinewave(N=500, seed=42)
+            self.dload = src.dataloader.Sinewave(N=100, seed=42)
         if dataset == 'simplecurve':
-            self.dload = src.dataloader.Simplecurve(N=500, seed=42)
+            self.dload = src.dataloader.Simplecurve(N=100, seed=42)
 
     def plot_ensemble(self, ax, mean, var):
         mean = mean.flatten()

@@ -4,9 +4,9 @@ plot=$2
 num_cores=4
 echo "Using $num_cores core(s)..."
 #
-mpiexec -n $num_cores python $script 
-if [ "$plot" == "plot" ]
+mpiexec --oversubscribe -n $num_cores python $script 
+if [ -n "$plot" ]
 then 
-    python plot.py
+    python "$plot"
 fi
 echo "Finished."

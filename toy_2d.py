@@ -20,7 +20,7 @@ if __name__ == "__main__":
     starttime = time.time()
     # Define parameters
     ensemble_size = 2           # Ensemble size per core
-    epochs = 1000
+    epochs = 20000
     learning_rate = 1e-3
     batch_size = 16
     measurements = epochs//200  # Measure every n steps

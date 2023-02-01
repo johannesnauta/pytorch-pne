@@ -26,8 +26,8 @@ if __name__ == "__main__":
 
     # Initialize objects
     # available data sets: Sinewave(N, seed), Simplecurve(N, seed)
-    # datasets = ['sinewave', 'simplecurve']
-    datasets = ['simplecurve']
+    datasets = ['sinewave', 'simplecurve']
+    #  datasets = ['simplecurve']
     for curve in datasets:
         if boss:
             print("\nLearning %s..."%(curve))

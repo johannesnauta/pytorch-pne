@@ -22,9 +22,13 @@ In addition to the standard Python 3 libraries, to run the code you will need:
 * mpi4py
 
 ## Executing the code
-Executing the code is done through the `run.sh` bash file which requires the script to execute and has an additional plotting flag. For general use please execute
+Executing the code is done through the `run.sh` bash file which requires the script to execute and an optional plotting script. For the 1D and 2D toy problems respectively, please run
 ```
-    bash run.sh toy.py plot
+./run.sh toy_1d.py plot_1d.py
+```
+and
+```
+./run.sh toy_2d.py plot_2d.py
 ```
 which trains the network and plots the figures. After training, the output models are stored in the `/data/` directory and can be plotten by simply calling `python plot.py`. Additionally, the plots can be saved with an additional `save` argument, e.g. `python plot.py save` saves the figures in the `/figures/` directory.
 

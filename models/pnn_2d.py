@@ -70,7 +70,7 @@ class Model():
         """ Execute gradient step given the samples in the minibatch """
         # Convert input and true_out to useable tensors
         x = torch.from_numpy(inputs).float()
-        y = torch.from_numpy(true_out).unsqueeze(-1).float()
+        y = torch.from_numpy(true_out).float()
 
         # Compute output of model
         out = self.model(x)

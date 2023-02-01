@@ -103,7 +103,3 @@ class Model():
         self.optimizer.step()
 
         self.adjust_learning_rate()
-
-        
-        
-        
